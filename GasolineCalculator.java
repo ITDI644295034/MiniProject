@@ -255,7 +255,7 @@ public class GasolineCalculator extends javax.swing.JFrame {
             double OilPrice = 0;
             String signtype = "" + cbxType.getSelectedItem();
             String Brand = "PTT";
-            Camnal(CarType, OilPrice, Brand);
+            checkType(CarType, OilPrice, Brand);
         }
         if (rdoBcp.isSelected()) {
             String amount = txtAmount.getText();
@@ -263,7 +263,7 @@ public class GasolineCalculator extends javax.swing.JFrame {
             double OilPrice = 0;
             String signtype = "" + cbxType.getSelectedItem();
             String Brand = "BCP";
-            Camnal(CarType, OilPrice, Brand);
+            checkType(CarType, OilPrice, Brand);
         }
         if (rdoShell.isSelected()) {
             String amount = txtAmount.getText();
@@ -271,7 +271,7 @@ public class GasolineCalculator extends javax.swing.JFrame {
             double OilPrice = 0;
             String signtype = "" + cbxType.getSelectedItem();
             String Brand = "SHELL";
-            Camnal(CarType, OilPrice, Brand);
+            checkType(CarType, OilPrice, Brand);
         }
         if (rdoEsso.isSelected()) {
             String amount = txtAmount.getText();
@@ -279,12 +279,12 @@ public class GasolineCalculator extends javax.swing.JFrame {
             double OilPrice = 0;
             String signtype = "" + cbxType.getSelectedItem();
             String Brand = "ESSO";
-            Camnal(CarType, OilPrice, Brand);
+            checkType(CarType, OilPrice, Brand);
         }
 
     }                                      
 
-    public double Camnal(String CarType, double OilPrice, String Brand) throws NumberFormatException {
+    public double checkType(String CarType, double OilPrice, String Brand) throws NumberFormatException {
         if (CarType == "SEDAN") {
             String OilType = (String) cbxType.getSelectedItem();
             if (OilType == "Gassohol95") {
@@ -318,7 +318,7 @@ public class GasolineCalculator extends javax.swing.JFrame {
                     OilPrice = ESSO[2];
                 }
             }
-            Camnal2(OilPrice, Brand, OilType);
+            printTax(OilPrice, Brand, OilType);
         } else if (CarType == "PICKUP") {
             String OilType = "Diesel";
             if (Brand == "PTT") {
@@ -330,13 +330,13 @@ public class GasolineCalculator extends javax.swing.JFrame {
             } else if (Brand == "ESSO") {
                 OilPrice = ESSO[3];
             }
-            Camnal2(OilPrice, Brand, OilType);
+            printTax(OilPrice, Brand, OilType);
         }
         return OilPrice;
 
     }
 
-    public void Camnal2(double OilPrice, String Brand, String OilType) throws NumberFormatException {
+    public void printTax(double OilPrice, String Brand, String OilType) throws NumberFormatException {
         String AmountString = txtAmount.getText();
         double AmountDouble = Double.valueOf(AmountString);
         double Litre = AmountDouble / OilPrice;
@@ -395,7 +395,7 @@ public class GasolineCalculator extends javax.swing.JFrame {
             double OilPrice = 0;
             String signtype = "" + cbxType.getSelectedItem();
             String Brand = "PTT";
-            Camnal(CarType, OilPrice, Brand);
+            checkType(CarType, OilPrice, Brand);
         }
         if (rdoBcp.isSelected()) {
             String amount = txtAmount.getText();
@@ -403,7 +403,7 @@ public class GasolineCalculator extends javax.swing.JFrame {
             double OilPrice = 0;
             String signtype = "" + cbxType.getSelectedItem();
             String Brand = "BCP";
-            Camnal(CarType, OilPrice, Brand);
+            checkType(CarType, OilPrice, Brand);
         }
         if (rdoShell.isSelected()) {
             String amount = txtAmount.getText();
@@ -411,7 +411,7 @@ public class GasolineCalculator extends javax.swing.JFrame {
             double OilPrice = 0;
             String signtype = "" + cbxType.getSelectedItem();
             String Brand = "SHELL";
-            Camnal(CarType, OilPrice, Brand);
+            checkType(CarType, OilPrice, Brand);
         }
         if (rdoEsso.isSelected()) {
             String amount = txtAmount.getText();
@@ -419,7 +419,7 @@ public class GasolineCalculator extends javax.swing.JFrame {
             double OilPrice = 0;
             String signtype = "" + cbxType.getSelectedItem();
             String Brand = "ESSO";
-            Camnal(CarType, OilPrice, Brand);
+            checkType(CarType, OilPrice, Brand);
         }
     }                                          
 
